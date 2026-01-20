@@ -33,14 +33,16 @@ export default component$(() => {
         'justify-content': 'center',
         gap: '10%',
       }}>
-        <TilePicker store={tileStore} />
-        <GroutPicker groutSize={groutSize} />
-        <RotatePicker rotate={rotate} />
-        <div style={{ display: 'flex', "flex-direction": "column", justifyContent: "space-around" }}>
-          <OffsetPicker offset={offset} />
-          <OffsetPicker offset={offset2} />
-        </div>
-        <GroutColorPicker groutColor={groutColor} />
+        {tileStore.tiles.length === 0 ? <TilePicker store={tileStore} /> : undefined}
+        {tileStore.tiles.length !== 0 ? <>
+          <GroutPicker groutSize={groutSize} />
+          <RotatePicker rotate={rotate} />
+          <div style={{ display: 'flex', "flex-direction": "column", justifyContent: "space-around" }}>
+            <OffsetPicker offset={offset} />
+            <OffsetPicker offset={offset2} />
+          </div>
+          <GroutColorPicker groutColor={groutColor} />
+        </> : undefined}
       </div>
 
       <Floor
