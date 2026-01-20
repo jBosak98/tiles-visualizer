@@ -13,7 +13,7 @@ export default extendConfig(baseConfig, () => {
     plugins: [
       staticAdapter({
         origin: "https://jbosak98.github.io/tiles-visualizer",
-        base: "/tiles-visualizer"
+        base:"/tiles-visualizer"
       }),
     ],
   };
